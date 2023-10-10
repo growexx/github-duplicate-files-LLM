@@ -4,17 +4,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import LabelEncoder
 
-def preprocess():
+def common_function():
 	# Load the dataset from a CSV file
 	data = pd.read_csv("your_dataset.csv")
-
-	# Handle missing values
-	imputer = SimpleImputer(strategy="mean")
-	data["column_with_missing_values"] = imputer.fit_transform(data[["column_with_missing_values"]])
-
-	# Encode categorical variables
-	encoder = LabelEncoder()
-	data["categorical_column"] = encoder.fit_transform(data["categorical_column"])
 
 	# Standardize numerical features
 	scaler = StandardScaler()
